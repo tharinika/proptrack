@@ -452,7 +452,7 @@ emailjs.send(
             <GradientButton 
               onClick={handleSubmit} 
               className="flex-1"
-              disabled={!isFormValid}
+              disabled={!false}
             >
               <UserPlus className="w-4 h-4 mr-2" />
               Add Tenant & Send Invite
