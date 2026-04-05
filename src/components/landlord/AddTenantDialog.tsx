@@ -190,6 +190,7 @@ emailjs.send(
   "template_rnmkppb",    // your template ID
   {
     to_email: tenantData.email,
+    tenant_email: tenantData.email,
     passcode:tempPassword
   },
   "o3RmpQaAvNyMa1Lu0"    // your public key
