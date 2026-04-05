@@ -193,6 +193,7 @@ emailjs.send(
     property_name: selectedProperty.name,
     unit_number: selectedUnit.number,
     rent: tenantData.monthlyRent,
+    to_email: tenantData.email
   },
   "o3RmpQaAvNyMa1Lu0"    // your public key
 )
