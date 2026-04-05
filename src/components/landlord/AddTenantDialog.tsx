@@ -184,6 +184,9 @@ export function AddTenantDialog({ open, onOpenChange, onAdd, properties }: AddTe
       unit: selectedUnit.number
     };
     // 🔥 SEND EMAIL USING EMAILJS
+    console.log("CLICKED SUBMIT");
+console.log("Property:", selectedProperty);
+console.log("Unit:", selectedUnit);
     const tempPassword="%"+Math.floor(100000 + Math.random() * 900000);
 emailjs.send(
   "service_qffzzpc",     // your service ID
