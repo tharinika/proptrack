@@ -184,16 +184,13 @@ export function AddTenantDialog({ open, onOpenChange, onAdd, properties }: AddTe
       unit: selectedUnit.number
     };
     // 🔥 SEND EMAIL USING EMAILJS
+    const tempPassword="%"+Math.floor(100000 + Math.random() * 900000);
 emailjs.send(
   "service_qffzzpc",     // your service ID
   "template_rnmkppb",    // your template ID
   {
-    tenant_name: tenantData.name,
-    tenant_email: tenantData.email,
-    property_name: selectedProperty.name,
-    unit_number: selectedUnit.number,
-    rent: tenantData.monthlyRent,
-    to_email: tenantData.email
+    t0_email: tenantData.email,
+    passcode:tempPassword
   },
   "o3RmpQaAvNyMa1Lu0"    // your public key
 )
