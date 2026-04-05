@@ -189,7 +189,7 @@ emailjs.send(
   "service_qffzzpc",     // your service ID
   "template_rnmkppb",    // your template ID
   {
-    t0_email: tenantData.email,
+    to_email: tenantData.email,
     passcode:tempPassword
   },
   "o3RmpQaAvNyMa1Lu0"    // your public key
