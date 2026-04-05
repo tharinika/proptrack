@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
@@ -182,7 +183,27 @@ export function AddTenantDialog({ open, onOpenChange, onAdd, properties }: AddTe
       unitId: selectedUnitId,
       unit: selectedUnit.number
     };
-
+    // 🔥 SEND EMAIL USING EMAILJS
+emailjs.send(
+  "service_qffzzpc",     // your service ID
+  "template_rnmkppb",    // your template ID
+  {
+    tenant_name: tenantData.name,
+    tenant_email: tenantData.email,
+    property_name: selectedProperty.name,
+    unit_number: selectedUnit.number,
+    rent: tenantData.monthlyRent,
+  },
+  "o3RmpQaAvNyMa1Lu0"    // your public key
+)
+.then(() => {
+  console.log("Email sent successfully");
+  toast.success("Tenant added & email sent!");
+})
+.catch((error) => {
+  console.error("Email error:", error);
+  toast.error("Tenant added but email failed");
+});
     onAdd(tenant);
     
     // Reset form
